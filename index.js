@@ -1,7 +1,10 @@
 const express = require("express");
+const cors = require("cors");
+
 const app = express();
 
 app.use(express.json()); // parse JSON bodies
+app.use(cors());
 
 // Fake database
 let users = [];
