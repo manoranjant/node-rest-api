@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  node-api:
+    build: ./api
+    container_name: node-api
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./api:/app
+    command: node index.js
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - node-api

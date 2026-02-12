@@ -53,3 +53,7 @@ url -X DELETE http://localhost:3000/users/1
 - git remote add origin https://github.com/manoranjant/node-rest-api.git
 - git branch -M main
 - git push -u origin main
+
+# Run Docker
+
+docker compose up --build
